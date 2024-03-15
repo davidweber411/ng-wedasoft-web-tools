@@ -1,5 +1,10 @@
 <header>
   <h1>{{ title }}</h1>
+  <nav>
+    <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
+    <a routerLink="/wheelOfChoices" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Wheel of
+      choices</a>
+  </nav>
 </header>
 
 <main>
