@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "baseHref": "/wedasoft-content/ng-wedasoft-web-tools/",
+            "baseHref": "/",
             "outputPath": "dist/ng-wedasoft-web-tools",
             "index": "src/index.html",
             "browser": "src/main.ts",
