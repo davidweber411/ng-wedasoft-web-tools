@@ -1,0 +1,58 @@
+.wheelWrapper {
+  position: relative;
+}
+
+/* wheel pointer */
+.wheelPointerWrapper {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 2rem;
+  height: 2rem;
+  filter: drop-shadow(0px 0px 2px var(--shadow-color));
+}
+
+.wheelPointer {
+  height: 100%;
+  width: 100%;
+  background: white;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+/* wheel */
+.wheel {
+  position: relative;
+  height: 70vw;
+  width: 70vw;
+  max-height: 500px;
+  max-width: 500px;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 10px var(--shadow-color);
+  transition: 3s all;
+  background: white;
+  border: 3px solid white;
+  z-index: 1;
+}
+
+@media (orientation: landscape) {
+  .wheel {
+    height: 70vh;
+    width: 70vh;
+  }
+}
+
+:host ::ng-deep{
+  .wheel-section {
+    position: absolute;
+    background: green;
+    height: 50%;
+    width: 100%;
+    transform-origin: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-lr;
+  }
+}

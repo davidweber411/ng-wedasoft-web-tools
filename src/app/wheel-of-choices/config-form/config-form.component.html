@@ -1,0 +1,10 @@
+<div class="configForm">
+  <button class="app-comp-btn spin-button"
+          (click)="onSpinBtnClick()">Spin!
+  </button>
+  <textarea #choicesTextArea
+            class="app-comp-ta choicesTextArea"
+            rows="10"
+            cols="30"
+            (input)="onChoicesTaInput(choicesTextArea.value)"></textarea>
+</div>
