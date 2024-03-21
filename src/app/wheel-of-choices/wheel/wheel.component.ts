@@ -162,6 +162,7 @@ export class WheelComponent implements AfterViewInit {
     let section: HTMLDivElement = document.createElement('div');
     section.classList.add('wheel-section');
     section.innerHTML = text;
+    section.title=text;
     section.style.transform = 'rotate(' + rotateDeg + 'deg)';
     return section;
   }
