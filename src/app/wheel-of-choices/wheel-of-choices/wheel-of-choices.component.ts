@@ -1,13 +1,17 @@
 import {Component, ViewChild} from '@angular/core';
 import {WheelComponent} from "../wheel/wheel.component";
 import {ConfigFormComponent} from "../config-form/config-form.component";
+import {WebtoolHeaderComponent} from "../../wsng-components/header/webtool-header.component";
+import {RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-main',
   standalone: true,
   imports: [
     WheelComponent,
-    ConfigFormComponent
+    ConfigFormComponent,
+    WebtoolHeaderComponent,
+    RouterOutlet
   ],
   templateUrl: './wheel-of-choices.component.html',
   styleUrl: './wheel-of-choices.component.scss'

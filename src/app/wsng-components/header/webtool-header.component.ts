@@ -2,16 +2,16 @@ import {Component, Inject, Input} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-webtool-header',
   standalone: true,
   imports: [
     RouterLink,
     RouterLinkActive
   ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  templateUrl: './webtool-header.component.html',
+  styleUrl: './webtool-header.component.scss'
 })
-export class HeaderComponent {
-  @Input() appTitle: string = '';
+export class WebtoolHeaderComponent {
+  @Input() webToolTitle: string = '';
 
 }
