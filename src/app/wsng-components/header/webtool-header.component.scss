@@ -4,19 +4,18 @@ header {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  .headerText {
+    text-align: center;
+    color: white;
+    font-family: 'Noto Serif', sans-serif;
+  }
+
+  > a.back-btn,
+  > div.empty-div {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
 }
 
-header.wheel-of-choices-header {
-  padding: 1rem;
-}
 
-.headerText {
-  text-align: center;
-  color: white;
-}
-
-header > a.back-btn,
-header > div.empty-div {
-  width: 2.3rem;
-  height: 2.3rem;
-}
