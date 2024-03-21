@@ -1,6 +1,6 @@
-<div class="wheelWrapper">
-  <div class="wheelPointerWrapper">
-    <div class="wheelPointer"></div>
-  </div>
-  <div class="wheel"></div>
-</div>
+<main>
+  <app-wheel #appWheelOfChoices></app-wheel>
+  <app-config-form
+    (onSpinBtnClickEvent)="onSpinBtnClickEventListener()"
+    (onChoicesTaInputEvent)="onChoicesTaInputEventListener($event)"></app-config-form>
+</main>

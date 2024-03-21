@@ -1,8 +1,8 @@
 import {Routes} from "@angular/router";
-import {MainComponent} from "./main/main.component";
+import {WheelOfChoicesComponent} from "./wheel-of-choices/wheel-of-choices.component";
 
 const wheelOfChoicesRoutes: Routes = [
-  {path: '', component: MainComponent},
+  {path: '', component: WheelOfChoicesComponent},
 ];
 
 export default wheelOfChoicesRoutes;

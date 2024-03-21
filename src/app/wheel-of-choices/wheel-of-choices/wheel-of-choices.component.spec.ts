@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { WheelOfChoicesComponent } from './wheel-of-choices.component';
+import {WheelOfChoicesComponent} from './wheel-of-choices.component';
 
-describe('WheelOfChoicesComponent', () => {
+describe('MainComponent', () => {
   let component: WheelOfChoicesComponent;
   let fixture: ComponentFixture<WheelOfChoicesComponent>;
 
@@ -10,8 +10,8 @@ describe('WheelOfChoicesComponent', () => {
     await TestBed.configureTestingModule({
       imports: [WheelOfChoicesComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(WheelOfChoicesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
