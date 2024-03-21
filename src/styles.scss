@@ -25,9 +25,9 @@ html {
   --shadow-color: rgba(50, 50, 0, 0.5);
 }
 
-.app-comp-btn,
-.app-comp-btn:focus,
-.app-comp-btn:hover {
+.wsng-btn,
+.wsng-btn:focus,
+.wsng-btn:hover {
   box-sizing: border-box;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
   font-weight: bold;
@@ -44,9 +44,9 @@ html {
   font-size: 0.8rem;
 }
 
-.app-comp-ta,
-.app-comp-ta:focus,
-.app-comp-ta:hover {
+.wsng-textarea,
+.wsng-textarea:focus,
+.wsng-textarea:hover {
   box-sizing: border-box;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
   padding: 0.8rem;
