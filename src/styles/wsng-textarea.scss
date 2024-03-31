@@ -2,13 +2,33 @@
 .wsng-textarea:focus,
 .wsng-textarea:hover {
   box-sizing: border-box;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
-  padding: 0.8rem;
-  border-radius: 0.25rem;
-  border: none;
-  background: white;
-  color: rgba(0, 0, 0, .87);
-  outline: none;
-  font-size: 1rem;
+  padding: 8px;
+  background-attachment: local;
+  background-size: 100% 100%, 100% 100%, 100% 31px;
+  background-image: -webkit-linear-gradient(to left, white 10px, transparent 10px),
+  -webkit-linear-gradient(to right, white 10px, transparent 10px),
+  -webkit-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-image: -moz-linear-gradient(to left, white 10px, transparent 10px),
+  -moz-linear-gradient(to right, white 10px, transparent 10px),
+  -moz-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-image: -ms-linear-gradient(to left, white 10px, transparent 10px),
+  -ms-linear-gradient(to right, white 10px, transparent 10px),
+  -ms-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-image: -o-linear-gradient(to left, white 10px, transparent 10px),
+  -o-linear-gradient(to right, white 10px, transparent 10px),
+  -o-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-image: linear-gradient(to left, white 10px, transparent 10px),
+  linear-gradient(to right, white 10px, transparent 10px),
+  linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+
+  font-size: 16px;
   font-family: 'Noto Sans', arial, sans-serif;
+  color: rgba(0, 0, 0, .87);
+  line-height: 31px;
+  text-decoration: none;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
