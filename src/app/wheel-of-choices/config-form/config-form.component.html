@@ -1,7 +1,10 @@
 <div class="config-form">
-  <button class="wsui-btn spin-button"
-          (click)="onSpinBtnClick()">Spin!
-  </button>
+  <div class="button-bar">
+    <button class="wsui-btn spin-button"
+            (click)="onSpinBtnClick()">Spin!
+    </button>
+    <button class="wsui-btn">Share!</button>
+  </div>
   <textarea #choicesTextArea
             class="wsui-textarea choices-textarea"
             rows="10"

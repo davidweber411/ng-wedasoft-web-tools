@@ -1,13 +1,27 @@
-.spin-button {
-
-}
-
 .config-form {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
+  //width: 100%;
+  //max-width: 300px;
 }
+
+.button-bar {
+  display: flex;
+
+  > button {
+    margin-right: 1rem;
+    flex: 1;
+  }
+
+  > button:last-child {
+    margin-right: 0;
+  }
+}
+
 
 .choices-textarea {
   margin-top: 1rem;
+  //width: 100%;
 }
+
