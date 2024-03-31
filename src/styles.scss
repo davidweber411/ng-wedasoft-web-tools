@@ -25,5 +25,5 @@ html {
   --shadow-color: rgba(50, 50, 0, 0.5);
 }
 
-@import 'styles/wsui-btn';
-@import 'styles/wsui-textarea';
+@import 'lib/wsui/wsui-btn';
+@import 'lib/wsui/wsui-textarea';
