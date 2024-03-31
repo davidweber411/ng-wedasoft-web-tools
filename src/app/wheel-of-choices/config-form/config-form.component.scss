@@ -1,9 +1,13 @@
+:host {
+  width: 100%;
+  max-width: 300px;
+}
+
 .config-form {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
-  //width: 100%;
-  //max-width: 300px;
+  width: 100%;
 }
 
 .button-bar {
@@ -19,9 +23,8 @@
   }
 }
 
-
 .choices-textarea {
   margin-top: 1rem;
-  //width: 100%;
+  width: 100%;
 }
 
