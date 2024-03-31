@@ -1,8 +1,8 @@
 import {Component, ViewChild} from '@angular/core';
 import {WheelComponent} from "../wheel/wheel.component";
 import {ConfigFormComponent} from "../config-form/config-form.component";
-import {WebtoolHeaderComponent} from "../../wsng-components/header/webtool-header.component";
 import {RouterOutlet} from "@angular/router";
+import {WebtoolHeaderComponent} from "../../shared-components/webtool-header/webtool-header.component";
 
 @Component({
   selector: 'app-main',
