@@ -22,14 +22,12 @@ export class WheelComponent implements AfterViewInit {
   }
 
   handleOnChoicesTaInputEvent(taText: string) {
-    console.log('wheel: onChoicesTaInputEvent=' + taText);
     this.wheelDiv.innerHTML = ''; // removes all child nodes of the wheel
     let choices: string[] = this.choicesTextArea.value.replace('\r', '\n').replace('\n+', '\n').split('\n');
     this.initWheelParts(choices);
   }
 
   handleOnSpinBtnClickEvent() {
-    console.log('wheel: handleOnSpinBtnClickEvent');
     this.wheelRotationAngle += (1000 + Math.ceil(Math.random() * 4000));
     this.wheelDiv.style.transform = "rotate(" + this.wheelRotationAngle + "deg)";
   }

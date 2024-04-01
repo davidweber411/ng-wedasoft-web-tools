@@ -3,7 +3,8 @@ import {WheelComponent} from "../wheel/wheel.component";
 import {ConfigFormComponent} from "../config-form/config-form.component";
 import {ActivatedRoute, RouterOutlet} from "@angular/router";
 import {WebtoolHeaderComponent} from "../webtool-header/webtool-header.component";
-import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import {ClipboardService} from "ngx-clipboard";
+import {QUERY_PARAM_CHOICES} from "../../shared/constants";
 
 @Component({
   selector: 'app-main',
@@ -18,9 +19,12 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
   styleUrl: './wheel-of-choices.component.scss'
 })
 export class WheelOfChoicesComponent {
-  @ViewChild('appWheelOfChoices') appWheelOfChoices?: WheelComponent;
+  @ViewChild('appWheelOfChoices') wheelComponent?: WheelComponent;
+  @ViewChild('appConfigForm') configFormComponent?: ConfigFormComponent
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(
+    private clipboardService: ClipboardService,
+    private activatedRoute: ActivatedRoute) {
     // this.activatedRoute.queryParamMap
     //   .pipe(takeUntilDestroyed())
     //   .subscribe(params => {
@@ -30,19 +34,46 @@ export class WheelOfChoicesComponent {
   }
 
   onChoicesTaInputEventListener(taText: string) {
-    if (!this.appWheelOfChoices) {
+    if (!this.wheelComponent) {
       console.log('ERROR appWheelOfChoices is undefined.')
       return;
     }
-    this.appWheelOfChoices.handleOnChoicesTaInputEvent(taText);
+    this.wheelComponent.handleOnChoicesTaInputEvent(taText);
   }
 
   onSpinBtnClickEventListener() {
-    if (!this.appWheelOfChoices) {
+    if (!this.wheelComponent) {
       console.log('ERROR appWheelOfChoices is undefined.')
       return;
     }
-    this.appWheelOfChoices.handleOnSpinBtnClickEvent();
+    this.wheelComponent.handleOnSpinBtnClickEvent();
+  }
+
+  onShareButtonClickEventListener() {
+    if (!this.configFormComponent) {
+      console.log('ERROR this.configFormComponent is undefined.')
+      return;
+    }
+    if (!this.configFormComponent.textAreaElement) {
+      console.log('ERROR this.configFormComponent.textAreaElement is undefined.')
+      return;
+    }
+
+    let choicesJson = JSON.stringify(
+      (this.configFormComponent.textAreaElement.nativeElement as HTMLTextAreaElement).value.split('\n'));
+    const clearedUrl = this.getCurrentUrlWithoutChoicesQueryParam();
+    const urlWithQueryParam = `${clearedUrl}${clearedUrl.includes('?') ? '&' : '?'}${QUERY_PARAM_CHOICES}=${choicesJson}`;
+    this.clipboardService.copy(urlWithQueryParam);
+  }
+
+  private getCurrentUrlWithoutChoicesQueryParam() {
+    return window.location.href
+      .replace(
+        /([?&])choices=[^&]+(&|$)/,
+        '$1')
+      .replace(
+        /[?&]$/,
+        '');
   }
 
 }

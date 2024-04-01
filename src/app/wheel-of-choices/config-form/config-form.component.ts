@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-config-form',
@@ -8,6 +8,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrl: './config-form.component.scss'
 })
 export class ConfigFormComponent {
+  @ViewChild('choicesTextArea') textAreaElement?: ElementRef<HTMLTextAreaElement>;
   @Output() onSpinBtnClickEvent = new EventEmitter<void>();
   @Output() onChoicesTaInputEvent = new EventEmitter<string>();
 

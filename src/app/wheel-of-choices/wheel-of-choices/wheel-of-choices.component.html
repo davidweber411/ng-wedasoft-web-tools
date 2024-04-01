@@ -1,9 +1,11 @@
 <main>
-  <app-webtool-header [webToolTitle]="'Wheel of choices'"></app-webtool-header>
+  <app-webtool-header
+    [webToolTitle]="'Wheel of choices'"
+    (onShareButtonClickEvent)="onShareButtonClickEventListener()"></app-webtool-header>
   <div class="wheel-of-choices-wrapper">
     <app-wheel #appWheelOfChoices></app-wheel>
-    <app-config-form
-      (onSpinBtnClickEvent)="onSpinBtnClickEventListener()"
-      (onChoicesTaInputEvent)="onChoicesTaInputEventListener($event)"></app-config-form>
+    <app-config-form #appConfigForm
+                     (onSpinBtnClickEvent)="onSpinBtnClickEventListener()"
+                     (onChoicesTaInputEvent)="onChoicesTaInputEventListener($event)"></app-config-form>
   </div>
 </main>

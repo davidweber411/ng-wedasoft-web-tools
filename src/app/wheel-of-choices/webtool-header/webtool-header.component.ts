@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
@@ -13,5 +13,10 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 })
 export class WebtoolHeaderComponent {
   @Input() webToolTitle: string = '';
+  @Output() onShareButtonClickEvent = new EventEmitter<void>
+
+  onShareButtonClick() {
+    this.onShareButtonClickEvent.emit();
+  }
 
 }
