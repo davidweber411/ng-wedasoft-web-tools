@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from "@angular/core/testing";
+import {WebtoolHeaderComponent} from "./webtool-header.component";
 
-import { WebtoolHeaderComponent } from './webtool-header.component';
 
 describe('HeaderComponent', () => {
   let component: WebtoolHeaderComponent;
@@ -10,7 +10,7 @@ describe('HeaderComponent', () => {
     await TestBed.configureTestingModule({
       imports: [WebtoolHeaderComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(WebtoolHeaderComponent);
     component = fixture.componentInstance;
