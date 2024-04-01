@@ -1,3 +1,26 @@
+/*
+Imports
+*/
+@import 'lib/wsui/wsui-btn';
+@import 'lib/wsui/wsui-textarea';
+
+/*
+Font: Noto Serif
+*/
+@font-face {
+  font-family: 'Noto Serif';
+  src: url('./assets/fonts/noto-serif/NotoSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: italic;
+  src: url('./assets/fonts/noto-serif/NotoSerif-Italic.ttf') format('truetype');
+}
+
+/*
+Styles
+ */
 * {
   margin: 0;
   padding: 0;
@@ -25,5 +48,4 @@ html {
   --shadow-color: rgba(50, 50, 0, 0.5);
 }
 
-@import 'lib/wsui/wsui-btn';
-@import 'lib/wsui/wsui-textarea';
+
