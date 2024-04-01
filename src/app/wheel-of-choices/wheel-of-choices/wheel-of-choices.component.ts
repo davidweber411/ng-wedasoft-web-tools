@@ -59,21 +59,28 @@ export class WheelOfChoicesComponent {
       return;
     }
 
-    let choicesJson = JSON.stringify(
+    let choicesJson: string = JSON.stringify(
       (this.configFormComponent.textAreaElement.nativeElement as HTMLTextAreaElement).value.split('\n'));
-    const clearedUrl = this.getCurrentUrlWithoutChoicesQueryParam();
-    const urlWithQueryParam = `${clearedUrl}${clearedUrl.includes('?') ? '&' : '?'}${QUERY_PARAM_CHOICES}=${choicesJson}`;
-    this.clipboardService.copy(urlWithQueryParam);
+    this.clipboardService.copy(this.getCurrentUrlWithExchangedQueryParam(QUERY_PARAM_CHOICES, choicesJson));
   }
 
-  private getCurrentUrlWithoutChoicesQueryParam() {
-    return window.location.href
+  private getCurrentUrlWithExchangedQueryParam(
+    queryParamName: string,
+    queryParamValue: string): string {
+
+    let currentUrlWithoutQueryParam: string = window.location.href
       .replace(
         /([?&])choices=[^&]+(&|$)/,
         '$1')
       .replace(
         /[?&]$/,
         '');
+
+    let newUrl = currentUrlWithoutQueryParam.includes('?')
+      ? currentUrlWithoutQueryParam + '&'
+      : currentUrlWithoutQueryParam + '?';
+
+    return newUrl + queryParamName + '=' + queryParamValue;
   }
 
 }
