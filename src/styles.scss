@@ -3,46 +3,7 @@ Imports
 */
 @import 'lib/wsui/wsui-btn';
 @import 'lib/wsui/wsui-textarea';
-
-/*
-Font: Noto Serif
-*/
-@font-face {
-  font-family: 'Noto Serif';
-  src: url('./assets/fonts/noto-serif/NotoSerif-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: italic;
-  src: url('./assets/fonts/noto-serif/NotoSerif-Italic.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Noto Serif';
-  font-weight: bold;
-  src: url('./assets/fonts/noto-serif/NotoSerif-Bold.ttf') format('truetype');
-}
-
-/*
-Font: Noto Sans
-*/
-@font-face {
-  font-family: 'Noto Sans';
-  src: url('./assets/fonts/noto-sans/NotoSans-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  font-style: italic;
-  src: url('./assets/fonts/noto-sans/NotoSans-Italic.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  font-weight: bold;
-  src: url('./assets/fonts/noto-sans/NotoSans-Bold.ttf') format('truetype');
-}
+@import 'assets/fonts/fonts';
 
 /*
 Styles
