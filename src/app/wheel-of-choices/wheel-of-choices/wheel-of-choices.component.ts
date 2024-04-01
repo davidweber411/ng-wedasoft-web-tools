@@ -7,6 +7,7 @@ import {ClipboardService} from "ngx-clipboard";
 import {QUERY_PARAM_CHOICES} from "../../shared/constants";
 import {Subject, takeUntil} from "rxjs";
 import {DialogService} from "../../shared/services/dialog-service/dialog.service";
+import {ValidationService} from "../../shared/services/validation-service/validation.service";
 
 @Component({
   selector: 'app-main',
@@ -29,7 +30,8 @@ export class WheelOfChoicesComponent implements AfterViewInit, OnDestroy {
   constructor(
     private clipboardService: ClipboardService,
     private activatedRoute: ActivatedRoute,
-    private dialogService: DialogService) {
+    private dialogService: DialogService,
+    private validationService: ValidationService) {
   }
 
   ngAfterViewInit() {
@@ -38,6 +40,10 @@ export class WheelOfChoicesComponent implements AfterViewInit, OnDestroy {
       .subscribe(params => {
         const choicesParamValue = params.get(QUERY_PARAM_CHOICES);
         if (choicesParamValue) {
+          if (!this.validationService.isValidJsonArrayOfStringOrNumber(choicesParamValue)) {
+            this.dialogService.showInfoDialog('Error', 'The received configuration is not valid.');
+            return;
+          }
           const choicesString = JSON.parse(choicesParamValue).join('\n');
           this.configFormComponent!.textAreaElement!.nativeElement.value = choicesString;
           this.wheelComponent?.handleOnChoicesTaInputEvent(choicesString);
