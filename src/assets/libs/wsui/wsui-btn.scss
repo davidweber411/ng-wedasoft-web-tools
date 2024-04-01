@@ -33,7 +33,9 @@
 .wsui-btn-back,
 .wsui-btn-share {
   height: 39px;
+  min-height: 39px;
   width: 39px;
+  min-width: 39px;
 }
 
 .wsui-btn-back::before {

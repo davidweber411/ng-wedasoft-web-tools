@@ -1,20 +1,13 @@
 header {
   padding: 1rem;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
-  flex-wrap: wrap;
 
-  .headerText {
+  > h1 {
     text-align: center;
     color: white;
     font-family: 'Noto Serif', sans-serif;
-  }
-
-  > a.back-btn,
-  > div.empty-div {
-    width: 2.3rem;
-    height: 2.3rem;
   }
 }
 
