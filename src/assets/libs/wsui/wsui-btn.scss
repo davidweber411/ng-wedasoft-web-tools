@@ -29,3 +29,18 @@
   background-size: 100%;
   transition: background 0s;
 }
+
+.wsui-btn-back,
+.wsui-btn-share {
+  height: 39px;
+  width: 39px;
+}
+
+.wsui-btn-back::before {
+  content: '‹‹';
+}
+
+.wsui-btn-share::before {
+  content: "\1F381"; /* Unicode character for the "🎁" emoji */
+}
+

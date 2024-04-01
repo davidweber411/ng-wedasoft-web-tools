@@ -1,8 +1,9 @@
 import {Component, ViewChild} from '@angular/core';
 import {WheelComponent} from "../wheel/wheel.component";
 import {ConfigFormComponent} from "../config-form/config-form.component";
-import {RouterOutlet} from "@angular/router";
-import {WebtoolHeaderComponent} from "../../shared-components/webtool-header/webtool-header.component";
+import {ActivatedRoute, RouterOutlet} from "@angular/router";
+import {WebtoolHeaderComponent} from "../webtool-header/webtool-header.component";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 
 @Component({
   selector: 'app-main',
@@ -18,6 +19,15 @@ import {WebtoolHeaderComponent} from "../../shared-components/webtool-header/web
 })
 export class WheelOfChoicesComponent {
   @ViewChild('appWheelOfChoices') appWheelOfChoices?: WheelComponent;
+
+  constructor(private activatedRoute: ActivatedRoute) {
+    // this.activatedRoute.queryParamMap
+    //   .pipe(takeUntilDestroyed())
+    //   .subscribe(params => {
+    //     const choicesParamValue = params.get('choices');
+    //     console.log('choicesParamValue:', choicesParamValue);
+    //   });
+  }
 
   onChoicesTaInputEventListener(taText: string) {
     if (!this.appWheelOfChoices) {
