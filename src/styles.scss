@@ -25,6 +25,26 @@ Font: Noto Serif
 }
 
 /*
+Font: Noto Sans
+*/
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./assets/fonts/noto-sans/NotoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: italic;
+  src: url('./assets/fonts/noto-sans/NotoSans-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: bold;
+  src: url('./assets/fonts/noto-sans/NotoSans-Bold.ttf') format('truetype');
+}
+
+/*
 Styles
  */
 * {
