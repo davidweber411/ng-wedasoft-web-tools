@@ -41,7 +41,7 @@ export class WheelOfChoicesComponent implements AfterViewInit, OnDestroy {
         const choicesParamValue = params.get(QUERY_PARAM_CHOICES);
         if (choicesParamValue) {
           if (!this.validationService.isValidJsonArrayOfStringOrNumber(choicesParamValue)) {
-            this.dialogService.showInfoDialog('Error', 'The received configuration is not valid.');
+            this.dialogService.showInfoDialog('Error', 'The received link is broken.');
             return;
           }
           const choicesString = JSON.parse(choicesParamValue).join('\n');
