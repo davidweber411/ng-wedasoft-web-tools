@@ -6,6 +6,8 @@ import {WebtoolHeaderComponent} from "../webtool-header/webtool-header.component
 import {ClipboardService} from "ngx-clipboard";
 import {QUERY_PARAM_CHOICES} from "../../shared/constants";
 import {Subject, takeUntil} from "rxjs";
+import {MatDialog} from "@angular/material/dialog";
+import {InfoDialogComponent} from "../../shared/info-dialog/info-dialog.component";
 
 @Component({
   selector: 'app-main',
@@ -27,7 +29,8 @@ export class WheelOfChoicesComponent implements AfterViewInit, OnDestroy {
 
   constructor(
     private clipboardService: ClipboardService,
-    private activatedRoute: ActivatedRoute) {
+    private activatedRoute: ActivatedRoute,
+    private dialog: MatDialog) {
   }
 
   ngAfterViewInit() {
@@ -76,6 +79,13 @@ export class WheelOfChoicesComponent implements AfterViewInit, OnDestroy {
     let choicesJson: string = JSON.stringify(
       (this.configFormComponent.textAreaElement.nativeElement as HTMLTextAreaElement).value.split('\n'));
     this.clipboardService.copy(this.getCurrentUrlWithExchangedQueryParam(QUERY_PARAM_CHOICES, choicesJson));
+
+    this.dialog.open(InfoDialogComponent, {
+      data: {
+        title: 'Share this wheel!',
+        message: 'Simply forward the copied link, which is now saved in your clipboard!'
+      }
+    });
   }
 
   private getCurrentUrlWithExchangedQueryParam(
