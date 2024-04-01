@@ -1,10 +1,11 @@
-import {Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, ViewChild} from '@angular/core';
 import {WheelComponent} from "../wheel/wheel.component";
 import {ConfigFormComponent} from "../config-form/config-form.component";
 import {ActivatedRoute, RouterOutlet} from "@angular/router";
 import {WebtoolHeaderComponent} from "../webtool-header/webtool-header.component";
 import {ClipboardService} from "ngx-clipboard";
 import {QUERY_PARAM_CHOICES} from "../../shared/constants";
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-main',
@@ -18,19 +19,32 @@ import {QUERY_PARAM_CHOICES} from "../../shared/constants";
   templateUrl: './wheel-of-choices.component.html',
   styleUrl: './wheel-of-choices.component.scss'
 })
-export class WheelOfChoicesComponent {
+export class WheelOfChoicesComponent implements AfterViewInit, OnDestroy {
   @ViewChild('appWheelOfChoices') wheelComponent?: WheelComponent;
   @ViewChild('appConfigForm') configFormComponent?: ConfigFormComponent
+
+  private ngUnsubscribe: Subject<unknown> = new Subject<unknown>();
 
   constructor(
     private clipboardService: ClipboardService,
     private activatedRoute: ActivatedRoute) {
-    // this.activatedRoute.queryParamMap
-    //   .pipe(takeUntilDestroyed())
-    //   .subscribe(params => {
-    //     const choicesParamValue = params.get('choices');
-    //     console.log('choicesParamValue:', choicesParamValue);
-    //   });
+  }
+
+  ngAfterViewInit() {
+    this.activatedRoute.queryParamMap
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe(params => {
+        const choicesParamValue = params.get(QUERY_PARAM_CHOICES);
+        if (choicesParamValue) {
+          const choicesString = JSON.parse(choicesParamValue).join('\n');
+          this.configFormComponent!.textAreaElement!.nativeElement.value = choicesString;
+          this.wheelComponent?.handleOnChoicesTaInputEvent(choicesString);
+        }
+      });
+  }
+
+  ngOnDestroy() {
+    this.ngUnsubscribe.complete();
   }
 
   onChoicesTaInputEventListener(taText: string) {
