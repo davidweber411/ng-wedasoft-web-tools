@@ -81,9 +81,9 @@ export class WheelOfChoicesComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
-    let choicesJson: string = JSON.stringify(
-      (this.configFormComponent.textAreaElement.nativeElement as HTMLTextAreaElement).value.split('\n'));
-    this.clipboardService.copy(this.getCurrentUrlWithExchangedQueryParam(QUERY_PARAM_CHOICES, choicesJson));
+    let escapedChoicesJson: string = encodeURIComponent(JSON.stringify(
+      (this.configFormComponent.textAreaElement.nativeElement as HTMLTextAreaElement).value.split('\n')));
+    this.clipboardService.copy(this.getCurrentUrlWithExchangedQueryParam(QUERY_PARAM_CHOICES, escapedChoicesJson));
     this.dialogService.showInfoDialog(
       'Share this wheel!',
       'Simply forward the copied link, which is now saved in your clipboard!');
