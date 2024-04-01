@@ -8,23 +8,14 @@
   flex-direction: column;
   margin-top: 1rem;
   width: 100%;
-}
 
-.button-bar {
-  display: flex;
-
-  > button {
-    margin-right: 1rem;
-    flex: 1;
+  .spin-button {
   }
 
-  > button:last-child {
-    margin-right: 0;
+  .choices-textarea {
+    margin-top: 1rem;
+    width: 100%;
   }
 }
 
-.choices-textarea {
-  margin-top: 1rem;
-  width: 100%;
-}
 
