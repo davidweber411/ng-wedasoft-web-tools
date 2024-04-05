@@ -40,7 +40,8 @@ export class WheelOfChoicesComponent implements AfterViewInit, OnDestroy {
       .subscribe(params => {
         const choicesParamValue = params.get(QUERY_PARAM_CHOICES);
         if (choicesParamValue) {
-          if (!this.validationService.isValidJsonArrayOfStringOrNumber(choicesParamValue)) {
+          if (choicesParamValue.length > 10000
+            || !this.validationService.isValidJsonArrayOfStringOrNumber(choicesParamValue)) {
             this.dialogService.showInfoDialog('Error', 'The received link is broken.');
             return;
           }
