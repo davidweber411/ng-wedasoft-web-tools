@@ -6,12 +6,12 @@
   align-items: center;
   justify-content: center;
 
-  > h1 {
+  > h1, > h2 {
     color: white;
   }
 
-  > button {
-    margin-top: 1rem;
+  * {
+    margin: 1rem;
   }
 
 }
