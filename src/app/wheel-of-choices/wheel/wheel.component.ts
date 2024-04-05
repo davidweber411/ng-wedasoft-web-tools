@@ -28,7 +28,7 @@ export class WheelComponent implements AfterViewInit {
   }
 
   handleOnSpinBtnClickEvent() {
-    this.wheelRotationAngle += (1000 + Math.ceil(Math.random() * 4000));
+    this.wheelRotationAngle += (3600 + (Math.floor(Math.random() * (360 + 1))));
     this.wheelDiv.style.transform = "rotate(" + this.wheelRotationAngle + "deg)";
   }
 
@@ -160,7 +160,7 @@ export class WheelComponent implements AfterViewInit {
     let section: HTMLDivElement = document.createElement('div');
     section.classList.add('wheel-section');
     section.innerHTML = text;
-    section.title=text;
+    section.title = text;
     section.style.transform = 'rotate(' + rotateDeg + 'deg)';
     return section;
   }
