@@ -23,7 +23,7 @@ export class WheelComponent implements AfterViewInit {
 
   handleOnChoicesTaInputEvent(taText: string) {
     this.wheelDiv.innerHTML = ''; // removes all child nodes of the wheel
-    let choices: string[] = this.choicesTextArea.value.replace('\r', '\n').replace('\n+', '\n').split('\n');
+    let choices: string[] = taText.replace('\r', '\n').replace('\n+', '\n').split('\n');
     this.initWheelParts(choices);
   }
 
