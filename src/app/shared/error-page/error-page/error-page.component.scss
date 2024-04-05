@@ -1,0 +1,17 @@
+.error-msg-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > h1 {
+    color: white;
+  }
+
+  > button {
+    margin-top: 1rem;
+  }
+
+}
