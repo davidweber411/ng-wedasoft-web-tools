@@ -5,6 +5,11 @@ Imports
 @import 'assets/libs/wsui/wsui-textarea';
 @import 'assets/fonts/fonts';
 
+:root {
+  --header-height: 4rem;
+  --shadow-color: rgba(50, 50, 0, 0.5);
+}
+
 /*
 Styles
  */
@@ -27,10 +32,4 @@ html {
   background-repeat: no-repeat no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
-}
-
-:root {
-  --header-height: 4rem;
-  --shadow-color: rgba(50, 50, 0, 0.5);
 }
