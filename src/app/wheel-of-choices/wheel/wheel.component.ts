@@ -18,18 +18,23 @@ export class WheelComponent implements AfterViewInit {
     this.spinButton = document.querySelector('.spin-button') as HTMLDivElement;
     this.choicesTextArea = document.querySelector('.choices-textarea') as HTMLTextAreaElement;
     this.choicesTextArea.value = 'Pizza\nAsia\nIndian';
-    this.initWheelParts(this.choicesTextArea.value.replace('\r', '\n').replace('\n+', '\n').split('\n'));
+    this.initWheelParts(this.createChoicesStringArrayFromString(this.choicesTextArea.value));
   }
 
   handleOnChoicesTaInputEvent(taText: string) {
     this.wheelDiv.innerHTML = ''; // removes all child nodes of the wheel
-    let choices: string[] = taText.replace('\r', '\n').replace('\n+', '\n').split('\n');
-    this.initWheelParts(choices);
+    this.initWheelParts(this.createChoicesStringArrayFromString(taText));
   }
 
   handleOnSpinBtnClickEvent() {
     this.wheelRotationAngle += (3600 + (Math.floor(Math.random() * (360 + 1))));
     this.wheelDiv.style.transform = "rotate(" + this.wheelRotationAngle + "deg)";
+  }
+
+  private createChoicesStringArrayFromString(s: string): string[] {
+    return s.replace('\r', '\n')
+      .replace('\n+', '\n')
+      .split('\n');
   }
 
   private getRandomColor(): number[] {
