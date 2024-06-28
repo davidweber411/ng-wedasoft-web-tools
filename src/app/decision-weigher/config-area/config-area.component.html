@@ -1,0 +1,17 @@
+<div class="dw-config-area">
+  <section class="dw-config-form">
+    <fieldset>
+      <label>Weight:</label>
+      <input #weightInput type="number" size="1" [defaultValue]="0" (keyup.enter)="onWeightInputEnterKeyUp()">
+    </fieldset>
+    <fieldset>
+      <button (click)="onAddElementButtonClick($event)">Add element</button>
+    </fieldset>
+  </section>
+  <section>
+    <div>
+      <label>Still unused:</label>
+      <div #stillUnusedDragDropElementsDiv class="dw-drop-zone dw-config-area-drop-zone"></div>
+    </div>
+  </section>
+</div>

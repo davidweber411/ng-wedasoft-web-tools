@@ -1,0 +1,52 @@
+.dw-config-area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: space-evenly;
+  padding: 0 8px;
+
+  section {
+    flex: 1;
+    border: var(--section-border);
+    padding: 8px;
+    margin: 8px;
+    border-radius: 8px;
+    background: var(--section-background);
+  }
+
+  .dw-config-form {
+    flex: 1;
+
+    fieldset {
+      border: none;
+      display: flex;
+      margin-top: 8px;
+
+      &:nth-child(1) {
+        margin-top: 0;
+      }
+
+      > label {
+        margin-right: 8px;
+      }
+
+      > input {
+        flex: 1;
+        min-width: 0;
+      }
+    }
+  }
+
+  .dw-config-area-drop-zone {
+    background: var(--drop-zone-background);
+    border: var(--drop-zone-border);
+    border-radius: var(--drop-zone-border-radius);
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dw-config-area {
+    flex-direction: column;
+  }
+}
