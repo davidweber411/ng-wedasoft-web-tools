@@ -5,6 +5,15 @@
   justify-content: space-evenly;
   padding: 0 8px;
 
+  .decision-weigher-section {
+    flex: 1;
+    border: var(--section-border);
+    padding: 8px;
+    margin: 8px;
+    border-radius: 8px;
+    background: var(--section-background);
+  }
+
   .dw-config-form {
     flex: 1;
 
