@@ -1,5 +1,5 @@
 <div class="dw-config-area">
-  <section class="dw-config-form">
+  <section class="dw-config-form decision-weigher-section">
     <fieldset>
       <label>Weight:</label>
       <input #weightInput type="number" size="1" [defaultValue]="0" (keyup.enter)="onWeightInputEnterKeyUp()">
@@ -8,10 +8,10 @@
       <button (click)="onAddElementButtonClick($event)">Add element</button>
     </fieldset>
   </section>
-  <section>
+  <section class="decision-weigher-section">
     <div>
       <label>Still unused:</label>
-      <div #stillUnusedDragDropElementsDiv class="dw-drop-zone dw-config-area-drop-zone"></div>
+      <div #stillUnusedDragDropElementsDiv class="decision-weigher-drop-zone dw-config-area-drop-zone"></div>
     </div>
   </section>
 </div>
