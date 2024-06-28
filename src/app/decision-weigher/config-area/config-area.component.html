@@ -1,11 +1,13 @@
-<div class="dw-config-area">
-  <section class="dw-config-form decision-weigher-section">
+<div class="decision-weigher-config-area">
+  <section class="decision-weigher-config-form decision-weigher-section">
     <fieldset>
       <label>Weight:</label>
       <input #weightInput type="number" size="1" [defaultValue]="0" (keyup.enter)="onWeightInputEnterKeyUp()">
     </fieldset>
     <fieldset>
       <button (click)="onAddElementButtonClick($event)">Add element</button>
+      <button (click)="onAddElementToLeftButtonClick($event)">Add left</button>
+      <button (click)="onAddElementToRightButtonClick($event)">Add right</button>
     </fieldset>
   </section>
   <section class="decision-weigher-section">

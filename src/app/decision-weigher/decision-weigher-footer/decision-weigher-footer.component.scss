@@ -1,0 +1,23 @@
+:host {
+  width: 100%;
+
+  .weight-scale-footer-part-2 {
+    margin: 0 auto;
+    background: #6f6efc;
+    width: 25%;
+    min-width: 100px;
+    height: 16px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: var(--box-shadow-3d);
+  }
+
+  .weight-scale-footer-part-1 {
+    margin: 0 auto;
+    background: #8180ff;
+    width: 30%;
+    min-width: 120px;
+    height: 32px;
+    border-radius: 16px;
+    box-shadow: var(--box-shadow-3d);
+  }
+}

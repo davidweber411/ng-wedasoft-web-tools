@@ -12,7 +12,7 @@ export class ConfigAreaComponent {
   @ViewChild('stillUnusedDragDropElementsDiv') stillUnusedDragDropElementsDiv!: ElementRef<HTMLDivElement>;
 
   onAddElementButtonClick($event: MouseEvent) {
-    this.createAndAddDragDropElement();
+    this.createAndAddDragDropElement(this.stillUnusedDragDropElementsDiv.nativeElement);
   }
 
   createDragDropElement(weight: number): HTMLDivElement {
@@ -23,6 +23,8 @@ export class ConfigAreaComponent {
     div.style.border = '1px solid #965F06';
     div.style.borderRadius = "4px";
     div.style.color = '#ffffff';
+    div.style.overflow = 'hidden';
+    div.style.textOverflow = 'ellipsis';
     div.style.background = '-moz-linear-gradient(top, #ffcb69 0%, #f0a733 50%, #f2a324 92%, #ffb730)';
     div.style.background = '-webkit-gradient(linear, left top, left bottom, from(#ffcb69), color-stop(0.50, #f0a733), color-stop(0.92, #f2a324), to(#ffb730))';
     div.style.boxShadow = '0px 1px 1px rgba(000,000,000,0.5), inset 1px 2px 0px rgba(255,255,255,0.4)';
@@ -31,10 +33,10 @@ export class ConfigAreaComponent {
   }
 
   onWeightInputEnterKeyUp() {
-    this.createAndAddDragDropElement();
+    this.createAndAddDragDropElement(this.stillUnusedDragDropElementsDiv.nativeElement);
   }
 
-  private createAndAddDragDropElement() {
+  private createAndAddDragDropElement(parentDiv: HTMLDivElement) {
     if (this.weightInput.nativeElement.value.length == 0) {
       return;
     }
@@ -42,7 +44,37 @@ export class ConfigAreaComponent {
       return;
     }
     const weight = Number(this.weightInput.nativeElement.value);
-    this.stillUnusedDragDropElementsDiv.nativeElement.appendChild(this.createDragDropElement(weight));
+    parentDiv.appendChild(this.createDragDropElement(weight));
   }
+
+  onAddElementToLeftButtonClick($event: MouseEvent) {
+    let parentDiv = document.querySelector('.weight-scale-left-dropzone') as HTMLDivElement;
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+  }
+
+  onAddElementToRightButtonClick($event: MouseEvent) {
+    let parentDiv = document.querySelector('.weight-scale-right-dropzone') as HTMLDivElement;
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+    this.createAndAddDragDropElement(parentDiv);
+  }
+
 
 }
