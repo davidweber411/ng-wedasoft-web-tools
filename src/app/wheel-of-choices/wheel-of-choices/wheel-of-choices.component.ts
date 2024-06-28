@@ -2,7 +2,7 @@ import {AfterViewInit, Component, OnDestroy, ViewChild} from '@angular/core';
 import {WheelComponent} from "../wheel/wheel.component";
 import {ConfigFormComponent} from "../config-form/config-form.component";
 import {ActivatedRoute, RouterOutlet} from "@angular/router";
-import {WebtoolHeaderComponent} from "../webtool-header/webtool-header.component";
+import {WebtoolHeaderComponent} from "../../shared/webtool-header/webtool-header.component";
 import {ClipboardService} from "ngx-clipboard";
 import {QUERY_PARAM_CHOICES} from "../../shared/constants";
 import {Subject, takeUntil} from "rxjs";
