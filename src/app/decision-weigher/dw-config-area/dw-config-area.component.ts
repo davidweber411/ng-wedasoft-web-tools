@@ -1,5 +1,5 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {DragDropModule} from "@angular/cdk/drag-drop";
+import {CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {DwDragDropElementComponent} from "../dw-drag-drop-element/dw-drag-drop-element.component";
 
 @Component({
@@ -33,22 +33,16 @@ export class DwConfigAreaComponent {
     return !isNaN(Number(this.weightInput.nativeElement.value));
   }
 
-  // onAddElementToLeftButtonClick($event: MouseEvent) {
-  //   if (!this.inputWeightIsValid()) {
-  //     return;
-  //   }
-  //   let node = this.createDragDropElement(Number(this.weightInput.nativeElement.value));
-  //   let parentDiv = document.querySelector('.weight-scale-left-dropzone') as HTMLDivElement;
-  //   parentDiv.appendChild(node);
-  // }
-  //
-  // onAddElementToRightButtonClick($event: MouseEvent) {
-  //   if (!this.inputWeightIsValid()) {
-  //     return;
-  //   }
-  //   let node = this.createDragDropElement(Number(this.weightInput.nativeElement.value));
-  //   let parentDiv = document.querySelector('.weight-scale-right-dropzone') as HTMLDivElement;
-  //   parentDiv.appendChild(node);
-  // }
+  onDrop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      // Transfering item to new container
+      transferArrayItem(event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
+    }
+  }
 
 }

@@ -1,4 +1,11 @@
-<div class="weight-scale-dropzone"></div>
+<div class="weight-scale-dropzone"
+     cdkDropList
+     [cdkDropListData]="weights"
+     (cdkDropListDropped)="onDrop($event)">
+  @for (weight of weights; track $index) {
+    <app-dw-drag-drop-element [weight]=" weight"></app-dw-drag-drop-element>
+  }
+</div>
 <div class="weight-scale-surface-bowl"></div>
 <div class="weight-scale-surface-bowl-holder">
   <app-dw-screw class="weight-scale-bar-screw"></app-dw-screw>
