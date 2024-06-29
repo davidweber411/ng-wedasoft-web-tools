@@ -7,11 +7,14 @@
 
   .weight-scale-dropzone {
     flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: end;
     margin-top: 32px;
     background: var(--drop-zone-background);
     border: var(--drop-zone-border);
     border-radius: var(--drop-zone-border-radius);
-    min-height: 100px;
   }
 
   .weight-scale-surface-bowl {
