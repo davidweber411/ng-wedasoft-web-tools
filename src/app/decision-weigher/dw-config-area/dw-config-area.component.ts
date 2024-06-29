@@ -1,6 +1,7 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {DwDragDropElementComponent} from "../dw-drag-drop-element/dw-drag-drop-element.component";
+import {DecisionWeigherService} from "../shared/service/decision-weigher.service";
 
 @Component({
   selector: 'app-dw-config-area',
@@ -13,6 +14,9 @@ export class DwConfigAreaComponent {
   @ViewChild('weightInput') weightInput!: ElementRef<HTMLInputElement>;
 
   weights: string[] = [];
+
+  constructor(private decisionWeigherService: DecisionWeigherService) {
+  }
 
   onAddElementButtonClick($event: MouseEvent) {
     if (this.inputWeightIsValid()) {
@@ -43,6 +47,7 @@ export class DwConfigAreaComponent {
         event.previousIndex,
         event.currentIndex);
     }
+    this.decisionWeigherService.rebalanceWeightScale();
   }
 
 }

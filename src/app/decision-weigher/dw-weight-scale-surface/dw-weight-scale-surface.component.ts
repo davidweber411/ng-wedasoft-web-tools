@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {DwScrewComponent} from "../dw-screw/dw-screw.component";
 import {CdkDragDrop, CdkDropList, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {DwDragDropElementComponent} from "../dw-drag-drop-element/dw-drag-drop-element.component";
+import {DecisionWeigherService} from "../shared/service/decision-weigher.service";
 
 @Component({
   selector: 'app-dw-weight-scale-surface',
@@ -18,6 +19,9 @@ export class DwWeightScaleSurfaceComponent {
 
   weights: string[] = [];
 
+  constructor(private decisionWeigherService: DecisionWeigherService) {
+  }
+
   onDrop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -28,29 +32,7 @@ export class DwWeightScaleSurfaceComponent {
         event.previousIndex,
         event.currentIndex);
     }
+    this.decisionWeigherService.rebalanceWeightScale();
   }
-
-  // // onDrop($event: any) {
-  //   // console.log("ASDASDAS");
-  //   // alert('hello');
-  // // }
-  //
-  // onDrop(event: CdkDragDrop<string[]>) {
-  //   console.log("ASDASDAS");
-  //   alert('hello');
-  //   const droppedItem = event.item.element.nativeElement.textContent!.trim();
-  //   console.log(`Weight of dropped item: ${droppedItem}`);
-  //
-  //   // Perform additional logic (e.g., add item to a list in this component)
-  // }
-  //
-  // // onDrop(event: CdkDragDrop<string[]>) {
-  // //   let droppedItem = event.item.element.nativeElement;
-  // //   // const droppedItem = event.item.element.nativeElement.textContent.trim();
-  // //   console.log(`Weight of dropped item: ${droppedItem}`);
-  // //
-  // //   // Perform additional logic (e.g., add item to a list in this component)
-  // // }
-
 
 }

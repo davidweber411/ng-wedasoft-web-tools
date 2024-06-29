@@ -3,7 +3,7 @@
   flex-direction: column;
   flex: 1;
   transform-origin: center bottom;
-  //transform: rotateZ(12deg);
+  transition: var(--decision-weigher-transition);
 
   .weight-scale-dropzone {
     flex: 1;
