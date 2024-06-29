@@ -1,0 +1,18 @@
+.dwDragDropElement {
+  display: inline-flex;
+  padding: 8px 14px;
+  border: 1px solid #965F06;
+  border-radius: 4px;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: -moz-linear-gradient(to top, #ffcb69 0%, #f0a733 50%, #f2a324 92%, #ffb730);
+  background: -webkit-linear-gradient(to left top, #ffcb69, #f0a733 50%, #f2a324 92%, #ffb730);
+  background: linear-gradient(to top, #ffcb69 0%, #f0a733 50%, #f2a324 92%, #ffb730);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 1px 2px 0 rgba(255, 255, 255, 0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7), 0 1px 0 rgba(255, 255, 255, 0.4);
+  cursor: move;
+  margin: 5px;
+  max-width: 100px;
+}

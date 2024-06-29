@@ -6,14 +6,16 @@
     </fieldset>
     <fieldset>
       <button (click)="onAddElementButtonClick($event)">Add element</button>
-      <button (click)="onAddElementToLeftButtonClick($event)">Add left</button>
-      <button (click)="onAddElementToRightButtonClick($event)">Add right</button>
+<!--      <button (click)="onAddElementToLeftButtonClick($event)">Add left</button>-->
+<!--      <button (click)="onAddElementToRightButtonClick($event)">Add right</button>-->
     </fieldset>
   </section>
   <section class="decision-weigher-section">
-    <div>
-      <label>Still unused:</label>
-      <div #stillUnusedDragDropElementsDiv class="decision-weigher-drop-zone dw-config-area-drop-zone"></div>
+    <label>Still unused:</label>
+    <div class="dw-config-area-drop-zone">
+      @for (weight of weights; track $index) {
+        <app-dw-drag-drop-element [weight]=" weight"></app-dw-drag-drop-element>
+      }
     </div>
   </section>
 </div>
