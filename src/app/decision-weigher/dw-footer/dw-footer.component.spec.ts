@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScrewComponent } from './screw.component';
+import { DwFooterComponent } from './dw-footer.component';
 
-describe('ScrewComponent', () => {
-  let component: ScrewComponent;
-  let fixture: ComponentFixture<ScrewComponent>;
+describe('DecisionWeigherFooterComponent', () => {
+  let component: DwFooterComponent;
+  let fixture: ComponentFixture<DwFooterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ScrewComponent]
+      imports: [DwFooterComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(ScrewComponent);
+
+    fixture = TestBed.createComponent(DwFooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

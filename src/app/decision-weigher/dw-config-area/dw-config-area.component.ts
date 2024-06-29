@@ -3,13 +3,13 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
 import {DwDragDropElementComponent} from "../dw-drag-drop-element/dw-drag-drop-element.component";
 
 @Component({
-  selector: 'app-config-area',
+  selector: 'app-dw-config-area',
   standalone: true,
   imports: [DragDropModule, DwDragDropElementComponent],
-  templateUrl: './config-area.component.html',
-  styleUrl: './config-area.component.scss'
+  templateUrl: './dw-config-area.component.html',
+  styleUrl: './dw-config-area.component.scss'
 })
-export class ConfigAreaComponent {
+export class DwConfigAreaComponent {
   @ViewChild('weightInput') weightInput!: ElementRef<HTMLInputElement>;
 
   weights: string[] = [];

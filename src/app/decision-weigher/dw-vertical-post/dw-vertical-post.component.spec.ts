@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DecisionWeigherVerticalPostComponent } from './decision-weigher-vertical-post.component';
+import { DwVerticalPostComponent } from './dw-vertical-post.component';
 
 describe('DecisionWeigherVerticalPostComponent', () => {
-  let component: DecisionWeigherVerticalPostComponent;
-  let fixture: ComponentFixture<DecisionWeigherVerticalPostComponent>;
+  let component: DwVerticalPostComponent;
+  let fixture: ComponentFixture<DwVerticalPostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DecisionWeigherVerticalPostComponent]
+      imports: [DwVerticalPostComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(DecisionWeigherVerticalPostComponent);
+
+    fixture = TestBed.createComponent(DwVerticalPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

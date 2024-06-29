@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WeightScaleComponent } from './weight-scale.component';
+import { DwConfigAreaComponent } from './dw-config-area.component';
 
-describe('WeightScaleComponent', () => {
-  let component: WeightScaleComponent;
-  let fixture: ComponentFixture<WeightScaleComponent>;
+describe('ConfigFormComponent', () => {
+  let component: DwConfigAreaComponent;
+  let fixture: ComponentFixture<DwConfigAreaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WeightScaleComponent]
+      imports: [DwConfigAreaComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(WeightScaleComponent);
+
+    fixture = TestBed.createComponent(DwConfigAreaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

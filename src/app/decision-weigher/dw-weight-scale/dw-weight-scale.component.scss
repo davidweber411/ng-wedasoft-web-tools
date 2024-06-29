@@ -34,48 +34,6 @@
       display: flex;
       flex: 1;
       align-items: end;
-
-      .weight-scale-surface {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        transform-origin: center bottom;
-        //transform: rotateZ(12deg);
-
-        .weight-scale-left-dropzone,
-        .weight-scale-right-dropzone {
-          flex: 1;
-          margin-top: 32px;
-          background: var(--drop-zone-background);
-          border: var(--drop-zone-border);
-          border-radius: var(--drop-zone-border-radius);
-          min-height: 100px;
-        }
-
-        .weight-scale-surface-bowl {
-          background: #F7B74B;
-          box-shadow: var(--box-shadow-3d);
-          border-radius: 0 0 100% 100%;
-          height: 32px;
-          width: 100%;
-        }
-
-        .weight-scale-surface-bowl-holder {
-          background: #a09fff;
-          height: 64px;
-          width: 16px;
-          margin: 0 auto -32px auto;
-          border-radius: 0 0 8px 8px;
-          box-shadow: var(--box-shadow-3d);
-          display: flex;
-          justify-content: center;
-          align-items: end;
-
-          .weight-scale-bar-screw {
-            margin-bottom: calc(16px + 4px);
-          }
-        }
-      }
     }
 
     .weight-scale-bar {

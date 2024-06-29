@@ -1,15 +1,15 @@
 import {Component} from '@angular/core';
 import {WebtoolHeaderComponent} from "../../shared/webtool-header/webtool-header.component";
-import {ConfigAreaComponent} from "../config-area/config-area.component";
-import {WeightScaleComponent} from "../weight-scale/weight-scale.component";
+import {DwConfigAreaComponent} from "../dw-config-area/dw-config-area.component";
+import {DwWeightScaleComponent} from "../dw-weight-scale/dw-weight-scale.component";
 
 @Component({
   selector: 'app-decision-weigher',
   standalone: true,
   imports: [
     WebtoolHeaderComponent,
-    ConfigAreaComponent,
-    WeightScaleComponent
+    DwConfigAreaComponent,
+    DwWeightScaleComponent
   ],
   templateUrl: './decision-weigher.component.html',
   styleUrl: './decision-weigher.component.scss'

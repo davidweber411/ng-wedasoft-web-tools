@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConfigAreaComponent } from './config-area.component';
+import { DwScrewComponent } from './dw-screw.component';
 
-describe('ConfigFormComponent', () => {
-  let component: ConfigAreaComponent;
-  let fixture: ComponentFixture<ConfigAreaComponent>;
+describe('ScrewComponent', () => {
+  let component: DwScrewComponent;
+  let fixture: ComponentFixture<DwScrewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ConfigAreaComponent]
+      imports: [DwScrewComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ConfigAreaComponent);
+    fixture = TestBed.createComponent(DwScrewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
