@@ -1,10 +1,15 @@
 <section class="dw-config-area-form-section decision-weigher-section">
   <fieldset>
     <label>Weight:</label>
-    <input #weightInput type="number" size="1" [defaultValue]="1" (keyup.enter)="onWeightInputEnterKeyUp()">
+    <input #weightInput
+           type="number"
+           size="1"
+           class="wsui-input"
+           [defaultValue]="1"
+           (keyup.enter)="onWeightInputEnterKeyUp()">
   </fieldset>
-  <fieldset>
-    <button (click)="onAddElementButtonClick($event)">Add element</button>
+  <fieldset class="dw-config-area-form-button-bar">
+    <button class="wsui-btn wsui-btn-primary" (click)="onAddElementButtonClick($event)">Add element</button>
   </fieldset>
 </section>
 <section class="dw-config-area-ddz-section decision-weigher-section">

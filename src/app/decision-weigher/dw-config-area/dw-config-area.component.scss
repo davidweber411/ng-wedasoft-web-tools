@@ -23,13 +23,19 @@
       }
 
       > label {
-        margin-right: 8px;
+        margin: auto 8px auto 0;
       }
 
       > input {
         flex: 1;
         min-width: 0;
         width: 100%;
+      }
+
+      &.dw-config-area-form-button-bar{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: right;
       }
     }
   }

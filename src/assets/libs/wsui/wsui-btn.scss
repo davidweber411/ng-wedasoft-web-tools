@@ -30,6 +30,21 @@
   transition: background 0s;
 }
 
+.wsui-btn-primary,
+.wsui-btn-primary:focus,
+.wsui-btn-primary:hover {
+  color: white;
+  border: 1px solid #ba76fa;
+  background: radial-gradient(circle at 20% 30%, #B368F9, transparent),
+  radial-gradient(circle at 80% 30%, #F5489A, transparent),
+  radial-gradient(circle at 80% 30%, #F5489A, transparent),
+  radial-gradient(circle at 50% 50%, #ECECEC, transparent),
+  radial-gradient(circle at 20% 70%, #FEAFFE, transparent),
+  radial-gradient(circle at 80% 70%, #EE4935, transparent),
+  radial-gradient(circle at 50% 90%, #900AC3, transparent),
+  radial-gradient(circle at 50% 10%, #C038FA, transparent);
+}
+
 .wsui-btn-back,
 .wsui-btn-share {
   height: 39px;
@@ -45,4 +60,3 @@
 .wsui-btn-share::before {
   content: "\1F381"; /* Unicode character for the "🎁" emoji */
 }
-
