@@ -1,4 +1,5 @@
 :host {
+  flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,35 +50,3 @@
     }
   }
 }
-
-//
-//@media (min-width: 0px) and (max-width: 400px) {
-//  /* from mini smartphone to smartphone */
-//  .decision-weigher-weight-scale {
-//    height: 400px;
-//  }
-//}
-//
-//@media (min-width: 401px) and (max-width: 767px) {
-//  /* from smartphone to tablet */
-//  .decision-weigher-weight-scale {
-//    height: 500px;
-//  }
-//}
-//
-//@media (min-width: 768px) and (max-width: 1023px) {
-//  /* from tablet to notebook */
-//  .decision-weigher-weight-scale {
-//    height: 500px;
-//  }
-//}
-//
-//@media (min-width: 1024px) {
-//  /* from notebook to infinity */
-//  .decision-weigher-weight-scale {
-//    height: 500px;
-//  }
-//}
-
-
-

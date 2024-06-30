@@ -1,12 +1,10 @@
-.decision-weigher-config-area {
+:host {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap-reverse;
-  justify-content: space-evenly;
+  flex-direction: column;
   padding: 0 8px;
+  flex: 1;
 
   .decision-weigher-section {
-    flex: 1;
     border: var(--section-border);
     padding: 8px;
     margin: 8px;
@@ -14,9 +12,7 @@
     background: var(--section-background);
   }
 
-  .decision-weigher-config-form {
-    flex: 1;
-
+  section.dw-config-area-form-section {
     fieldset {
       border: none;
       display: flex;
@@ -33,20 +29,24 @@
       > input {
         flex: 1;
         min-width: 0;
+        width: 100%;
       }
     }
   }
 
-  .dw-config-area-drag-drop-zone {
-    background: var(--drop-zone-background);
-    border: var(--drop-zone-border);
-    border-radius: var(--drop-zone-border-radius);
-    min-height: 100px;
-  }
-}
-
-@media (max-width: 768px) {
-  .decision-weigher-config-area {
+  section.dw-config-area-ddz-section {
+    flex: 1;
+    display: flex;
     flex-direction: column;
+
+    .dw-config-area-drag-drop-zone {
+      flex: 1;
+      min-height: 100px;
+      background: var(--drop-zone-background);
+      border: var(--drop-zone-border);
+      border-radius: var(--drop-zone-border-radius);
+    }
   }
+
+
 }

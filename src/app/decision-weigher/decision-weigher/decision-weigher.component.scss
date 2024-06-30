@@ -1,3 +1,11 @@
-.decision-weigher {
-  min-height: 100dvh;
+.decision-weigher-container {
+  flex: 1;
+  display: flex;
+  min-height: 60dvh;
+}
+
+@media (max-width: 768px) {
+  .decision-weigher-container {
+    flex-direction: column;
+  }
 }

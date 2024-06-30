@@ -1,7 +1,7 @@
-<div class="decision-weigher" cdkDropListGroup>
-  <app-webtool-header
-    [webToolTitle]="'Decision weigher'"
-    (onShareButtonClickEvent)="onShareButtonClickEventListener()"></app-webtool-header>
+<app-webtool-header
+  [webToolTitle]="'Decision weigher'"
+  (onShareButtonClickEvent)="onShareButtonClickEventListener()"></app-webtool-header>
+<div class="decision-weigher-container" cdkDropListGroup>
   <app-dw-weight-scale></app-dw-weight-scale>
   <app-dw-config-area></app-dw-config-area>
 </div>

@@ -1,22 +1,20 @@
-<div class="decision-weigher-config-area">
-  <section class="decision-weigher-config-form decision-weigher-section">
-    <fieldset>
-      <label>Weight:</label>
-      <input #weightInput type="number" size="1" [defaultValue]="1" (keyup.enter)="onWeightInputEnterKeyUp()">
-    </fieldset>
-    <fieldset>
-      <button (click)="onAddElementButtonClick($event)">Add element</button>
-    </fieldset>
-  </section>
-  <section class="decision-weigher-section">
-    <label>Still unused:</label>
-    <div class="dw-config-area-drag-drop-zone"
-         cdkDropList
-         [cdkDropListData]="weights"
-         (cdkDropListDropped)="onDrop($event)">
-      @for (weight of weights; track $index) {
-        <app-dw-drag-drop-element [weight]=" weight"></app-dw-drag-drop-element>
-      }
-    </div>
-  </section>
-</div>
+<section class="dw-config-area-form-section decision-weigher-section">
+  <fieldset>
+    <label>Weight:</label>
+    <input #weightInput type="number" size="1" [defaultValue]="1" (keyup.enter)="onWeightInputEnterKeyUp()">
+  </fieldset>
+  <fieldset>
+    <button (click)="onAddElementButtonClick($event)">Add element</button>
+  </fieldset>
+</section>
+<section class="dw-config-area-ddz-section decision-weigher-section">
+  <label>Still unused:</label>
+  <div class="dw-config-area-drag-drop-zone"
+       cdkDropList
+       [cdkDropListData]="weights"
+       (cdkDropListDropped)="onDrop($event)">
+    @for (weight of weights; track $index) {
+      <app-dw-drag-drop-element [weight]=" weight"></app-dw-drag-drop-element>
+    }
+  </div>
+</section>
