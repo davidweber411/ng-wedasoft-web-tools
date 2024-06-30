@@ -7,16 +7,12 @@ export class DecisionWeigherService {
 
   rebalanceWeightScale() {
     setTimeout(() => {
-      this._rebalanceWeightScale();
-    }, 250)
-  }
+      const sumWeightLeft = this.calculateSumWeightsOfSurface('.weight-scale-surface-left');
+      const sumWeightRight = this.calculateSumWeightsOfSurface('.weight-scale-surface-right');
 
-  _rebalanceWeightScale() {
-    const sumWeightLeft = this.calculateSumWeightsOfSurface('.weight-scale-surface-left');
-    const sumWeightRight = this.calculateSumWeightsOfSurface('.weight-scale-surface-right');
-
-    this.rebalanceWeightScaleHeader(sumWeightLeft, sumWeightRight);
-    this.rebalanceWeightScaleSurfaces(sumWeightLeft, sumWeightRight);
+      this.rebalanceWeightScaleHeader(sumWeightLeft, sumWeightRight);
+      this.rebalanceWeightScaleSurfaces(sumWeightLeft, sumWeightRight);
+    }, 250);
   }
 
   private rebalanceWeightScaleHeader(sumWeightLeft: number, sumWeightRight: number) {
