@@ -6,15 +6,22 @@ Imports
 @import 'assets/fonts/fonts';
 
 :root {
-  --header-height: 4rem;
   --shadow-color: rgba(50, 50, 0, 0.5);
-  --section-background: #f0f0f0;
+  --box-shadow-3d: 0 1px 1px rgba(000, 000, 000, 0.5), inset 1px 2px 0 rgba(255, 255, 255, 0.4);
+
+  --header-height: 4rem;
+
+  --section-background: #ffffff;
   --section-border: 1px solid #aaaaaa;
   --section-border-radius: 8px;
+
   --drop-zone-background: #e0e0e0;
   --drop-zone-border: 1px dashed #aaaaaa;
   --drop-zone-border-radius: 4px;
-  --box-shadow-3d: 0 1px 1px rgba(000, 000, 000, 0.5), inset 1px 2px 0 rgba(255, 255, 255, 0.4);
+
+  --surface-drop-zone-border-color: #bbbbbb;
+  --surface-drop-zone-border-color-transparent: #bbbbbb00;
+
   --decision-weigher-transition: all 2.0s;
 }
 
