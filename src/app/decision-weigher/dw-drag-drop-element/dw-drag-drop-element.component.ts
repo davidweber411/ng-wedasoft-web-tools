@@ -1,11 +1,12 @@
 import {Component, Input} from '@angular/core';
-import {CdkDrag} from "@angular/cdk/drag-drop";
+import {CdkDrag, CdkDragPlaceholder} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-dw-drag-drop-element',
   standalone: true,
   imports: [
-    CdkDrag
+    CdkDrag,
+    CdkDragPlaceholder
   ],
   templateUrl: './dw-drag-drop-element.component.html',
   styleUrl: './dw-drag-drop-element.component.scss'

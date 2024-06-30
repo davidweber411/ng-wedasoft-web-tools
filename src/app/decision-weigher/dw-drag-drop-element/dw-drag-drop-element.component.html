@@ -1,1 +1,4 @@
-<div cdkDrag class="dwDragDropElement">{{ weight }}</div>
+<div cdkDrag class="dwDragDropElement">
+  {{ weight }}
+  <div class="dwDragDropElement dwDragDropElementPlaceholder" *cdkDragPlaceholder>{{ weight }}</div>
+</div>
